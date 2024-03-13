@@ -1,0 +1,83 @@
+database-> collections->documents->fields
+
+Commands to show active database:
+
+db
+
+commands to show all available database:
+
+show dbs
+
+Syntax to switch the database or create the database:
+
+use database_name
+eg:use karthik
+
+Syntax to create a collection inside a database:
+
+db.createCollection("collection_name")
+eg: db.createCollection("books")
+
+Commands to show all available collections inside a current datbase:
+
+show collections
+
+Syntax to insert a documents:
+
+db.collection_name.insert(document)
+eg:db.sports.insert({sports_name:"volleyball",exp:4,trophywon:2})
+
+Syntax to view/query the documents:
+
+db.collection_name.find()
+eg:db.sports.find()
+
+Syntax to insert multiple documents:
+
+db.collection_name.insertMany([document1,document2,document3])
+eg:db.sports.insertMany([{sports_name:"volleyball",exp:4,trophywon:2},{sports_name:"football",exp:2,trophywon:1},{sports_name:"handball",exp:0,trophywon:}])
+
+Syntax to view/query the documents in a formatted way:
+
+db.collection_name.find().pretty()
+eg:db.sports.find().pretty()
+
+Syntax to view/query of the first documents which matches with the condition:
+
+db.collection_name.find(condition)
+eg:db.sports.find({trophywon:0})
+
+Syntax to modify single documents values:
+
+db.collection_name.upadte(selection_criteria_documents,{$set:updated_documents})
+eg:db.sports.update({sportsname:"handball"},{$set:{sportsname:swimming}})
+
+Syntax to modify multiple documents values:
+
+db.collection_name.upadte(selection_criteria_documents,{$set:updated_documents},{multi=true})
+eg:db.sports.update({sportsname:"handball"},{$set:{sportsname:swimming}},{multi=true})
+
+Syntax to find using and logic:
+
+db.collection_name.finsd({$and:[condition1,condition2]})
+eg:db.sports.find({$and:[{exp:0},{trophywon:0}]})
+
+Syntax to find using or logic:
+
+db.collection_name.finsd({$ors:[condition1,condition2]})
+eg:db.sports.find({$or:[{exp:0},{trophywon:0}]})
+
+
+1)open a mongodb atlas
+2)register it and build a cluster
+3)go to the security and create mongodb user(username and password)
+4)connect to the security network and add ip address. in generic we are using 0.0.0.0/0
+5)
+
+
+
+
+
+
+
+
